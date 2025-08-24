@@ -1,0 +1,14 @@
+@media (max-width: 1280px) {
+    .cardCol {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin: 0px 0px 20px;
+    }
+}
+
+@media(max-width: 767px) {
+    .cardCol {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

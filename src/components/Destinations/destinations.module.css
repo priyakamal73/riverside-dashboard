@@ -1,0 +1,29 @@
+@media(min-width: 1281px) {
+    .destCard {
+        width: 40%;
+        margin: 120px 0px 0px;
+        position: relative;
+        overflow: visible;
+        padding: 0px 24px 24px;
+    }
+}
+
+@media(max-width: 1280px) {
+    .destCard {
+        width: 75%;
+        margin: 120px 0px 0px;
+        position: relative;
+        overflow: visible;
+        padding: 0px 24px 24px;
+    }
+}
+
+@media(max-width: 767px) {
+    .destCard {
+        width: 100%;
+        /* margin: 120px 0px 0px;
+        position: relative;
+        overflow: visible;
+        padding: 0px 24px 24px; */
+    }
+}

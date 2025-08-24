@@ -1,0 +1,35 @@
+@media (min-width: 1281px) {
+    .cardParent {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        background-color: white;
+        padding: 0px 5px 0px;
+        margin: 50px 0px 0px;
+        border-radius: 3px;
+        /* border: 1px solid black; */
+    }
+
+    .table {
+        width: 50%;
+        /* border: 1px solid black; */
+    }
+
+    .map {
+        width: 40%;
+        /* border: 1px solid black; */
+    }
+}
+
+@media (max-width: 1280px) {
+
+    .cardParent {
+        align-items: stretch;
+    }
+
+    .map {
+        width: 100%;
+    }
+}
+
+/* style={{ display: "flex", alignItems: "center", gap: "100px", backgroundColor: "white", padding: "0px 5px 0px", margin: "50px 0px 0px", borderRadius: "3px" }}  */
