@@ -1,3 +1,23 @@
+.contentDiv {
+    padding: 24px;
+    text-align: center;
+    background: #EEEEEE;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.cardStats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
 @media(min-width: 1280px) {
 
     .destinations {
@@ -20,6 +40,10 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
+    }
+
+    .cardStats {
+        display: block;
     }
 }
 

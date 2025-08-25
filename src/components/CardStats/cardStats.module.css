@@ -1,7 +1,57 @@
+.card {
+    padding: 0px;
+}
+
+.cardTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardImgDiv {
+    width: 85px;
+    height: 85px;
+    border-radius: 3px;
+    position: relative;
+    top: -36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 45px;
+}
+
+.cardTitle {
+    color: #8c8c8c;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.cardData {
+    font-size: 24px;
+}
+
+.arrowUp {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.cardBottom {
+    font-size: 12px;
+    color: #8c8c8c;
+    text-align: left;
+}
+
+.cardCol {
+    max-width: 23.5%;
+}
+
 @media (max-width: 1280px) {
     .cardCol {
         flex: 0 0 50%;
-        max-width: 50%;
+        max-width: 100%;
         margin: 0px 0px 20px;
     }
 }

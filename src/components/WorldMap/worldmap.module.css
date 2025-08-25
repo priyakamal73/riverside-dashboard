@@ -1,0 +1,19 @@
+.composableMap{
+    width: 100%;
+    height: 500px;
+}
+
+.buttonDiv{
+    position: absolute;
+    top: 10;
+    left: 10;
+}
+
+.tooltip{
+    position: absolute;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    pointer-events: none;
+}

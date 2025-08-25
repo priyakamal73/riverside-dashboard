@@ -1,3 +1,31 @@
+.destinationTop {
+    position: relative;
+    height: 250px;
+    padding: 0px;
+}
+
+.bookButton {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    background-color: transparent;
+    color: black;
+}
+
+.destinationImage {
+    position: relative;
+    left: 0;
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+    transition: top 0.3s ease;
+    z-index: 2;
+    border-radius: 10px;
+}
+
 @media(min-width: 1281px) {
     .destCard {
         width: 40%;
@@ -21,9 +49,5 @@
 @media(max-width: 767px) {
     .destCard {
         width: 100%;
-        /* margin: 120px 0px 0px;
-        position: relative;
-        overflow: visible;
-        padding: 0px 24px 24px; */
     }
 }

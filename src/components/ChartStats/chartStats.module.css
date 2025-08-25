@@ -15,6 +15,15 @@
         /* border: 1px solid black; */
     }
 
+    .tableTitle {
+        text-align: left;
+        margin: 10px 0px 10px 10px;
+        color: #3C4858;
+        font-size: 18px;
+        line-height: 25.2px;
+        font-weight: 300;
+    }
+
     .map {
         width: 40%;
         /* border: 1px solid black; */
@@ -31,5 +40,3 @@
         width: 100%;
     }
 }
-
-/* style={{ display: "flex", alignItems: "center", gap: "100px", backgroundColor: "white", padding: "0px 5px 0px", margin: "50px 0px 0px", borderRadius: "3px" }}  */

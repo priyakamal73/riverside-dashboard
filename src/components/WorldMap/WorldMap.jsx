@@ -1,58 +1,20 @@
-import React, { useState } from "react";
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
-
-const geoUrl =
-  "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
-
-const WorldMap = () => {
-  const [zoomLevel, setZoomLevel] = useState(1);
-  const [tooltipContent, setTooltipContent] = useState("");
-  const [tooltipVisible, setTooltipVisible] = useState(false);
-  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-
-  const handleZoomIn = () => {
-    setZoomLevel(zoomLevel + 0.5);
-  };
-
-  const handleZoomOut = () => {
-    if (zoomLevel > 1) {
-      setZoomLevel(zoomLevel - 0.5);
-    }
-  };
-
-  const handleMouseEnter = (geo) => {
-    setTooltipContent(geo.properties.name);
-    setTooltipVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setTooltipVisible(false);
-  };
-
-  const handleMouseMove = (event) => {
-    setTooltipPosition({ x: event.clientX, y: event.clientY });
-  };
-
+import styles from "../WorldMap/worldmap.module.css"
+const WorldMap = (props) => {
+  
   return (
-    <div onMouseMove={handleMouseMove}>
-      <ComposableMap
-        projection="geoMercator"
-        projectionConfig={{
-          scale: 100,
-        }}
-        style={{
-          width: "100%"
-        }}
-      >
-        <ZoomableGroup zoom={zoomLevel} center={[0, 0]}>
-          <Geographies geography={geoUrl}>
-            {({ geographies }) =>
-              geographies.map((geo) => (
+    <div onMouseMove={props.onMapMouseMove}>
+      <ComposableMap projection="geoMercator" projectionConfig={{scale: 100}} className={styles.composableMap}>
+        <ZoomableGroup zoom={props.mapZoomLevel} center={[0, 0]}>
+          <Geographies geography={props.geoURL}>
+            {({ geographies }) => {
+    
+              return geographies.map((geo) => (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  onMouseEnter={() => handleMouseEnter(geo)}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseEnter={()=> props.onMapMouseEnter(geo)}
+                  onMouseLeave={props.onMapMouseLeave}
                   style={{
                     default: {
                       fill: geo.properties.name === "United States" ? "#333" : geo.properties.name === "Canada" ? "#666" : geo.properties.name === "United Kingdom" ? "#333" : "#ccc",
@@ -70,29 +32,19 @@ const WorldMap = () => {
                     },
                   }}
                 />
-              ))
-            }
+              ));
+            }}
           </Geographies>
         </ZoomableGroup>
-        <div style={{ position: "absolute", top: 10, left: 10 }}>
-          <button onClick={handleZoomIn}>+</button>
-          <button onClick={handleZoomOut}>-</button>
+        <div className={styles.buttonDiv}>
+          <button onClick={props.handleMapZoomIn}>+</button>
+          <button onClick={props.handleMapZoomOut}>-</button>
         </div>
       </ComposableMap>
-      {tooltipVisible && (
-        <div
-          style={{
-            position: "absolute",
-            top: tooltipPosition.y,
-            left: tooltipPosition.x,
-            backgroundColor: "#fff",
-            padding: "5px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            pointerEvents: "none",
-          }}
-        >
-          {tooltipContent}
+      
+      {props.tooltipVisible && (
+        <div className={styles.tooltip} style={{top: props.tooltipPosition.y, left: props.tooltipPosition.x}}>
+          {props.tooltipContent}
         </div>
       )}
     </div>
